@@ -4,7 +4,7 @@
 import Router from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-import "../components/style/ProgressBar.css";
+import "../components/style/Global.css";
 import { createGlobalStyle } from "styled-components";
 import { wrapper } from "../redux/store";
 
@@ -17,10 +17,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; color:#666;
   }
 `;
 
-function XawerApp({ Component, pageProps }) {
+function EcommerceApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
@@ -29,4 +30,4 @@ function XawerApp({ Component, pageProps }) {
   );
 }
 
-export default wrapper.withRedux(XawerApp);
+export default wrapper.withRedux(EcommerceApp);
