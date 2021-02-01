@@ -1,18 +1,22 @@
 #nprogress .bar {
   background: #32a8a6 !important;
 }
-/* 
-.slick-slide {
-  margin: 0 8px;
-} */
+
+
 
 .slick-slide{
   margin-left:  15px;
   margin-right:  15px;
 }
 
-.slick-list {
-  margin-left: -15px;
-  margin-right: -15px;
-  pointer-events: none;
+@media screen and (max-width: 540px) {
+  .slick-track{
+    width: 1024px !important;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .slick-track{
+    width: 2560px !important;
+  }
 }
