@@ -2,7 +2,7 @@
  * @author Aldi Mustafri
  * @email aldimustafri@live.com
  * @create date 2021-02-01 18:09:43
- * @modify date 2021-02-01 19:26:40
+ * @modify date 2021-02-01 21:45:23
  * @desc [description]
  */
 import Link from "next/link";
@@ -15,13 +15,14 @@ import {
 
 function SearchContent() {
   const { searchData } = useSelector((state) => state.Search);
+  // console.log(searchData);
 
   return (
     <SectionSearch>
       <Title>Search Result</Title>
       <SearchList>
-        {searchData.length ? (
-          searchData.map((item) => (
+        {searchData[0].length ? (
+          searchData[0].map((item) => (
             <SearchItem key={uuidv4()}>
               <SectionImage>
                 <SearchImg src={item.imageUrl} />
