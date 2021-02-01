@@ -39,8 +39,8 @@ export const SectionShare = styled.button`
   position: absolute;
   top: 5px;
   right: 10px;
-  border none
-  background: ${Colors.greenSoft}
+  border none;
+  background: ${Colors.greenSoft};
   display: grid;
   grid-gap: 10px;
   padding: 10px 1em;
@@ -111,4 +111,41 @@ export const BuyBtn = styled.button`
   color: ${Colors.whiteSoft};
   border: 1px solid ${Colors.greenSoft};
   font-weight: 600;
+`;
+
+export const TitleShare = styled.h3`
+  padding: 0 0 10px 0;
+  margin: 0;
+  line-height: 22px;
+  border-bottom: 1px solid ${Colors.whiteSoft};
+`;
+
+export const ModalClose = styled.button`
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 24.8px;
+`;
+
+export const ModalIcon = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+`;
+
+export const StyledIcon = styled.div`
+@media (min-width: 1281px) {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  list-style: none;
+  font-size: 30px;
+  border-radius: 400px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+}
 `;
