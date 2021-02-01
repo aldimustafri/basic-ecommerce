@@ -6,6 +6,7 @@ import thunkMiddleware from "redux-thunk";
 import LoginReducer from "../reducer/LoginReducer";
 import ProductReducer from "../reducer/ProductReducer";
 import BuyReducer from "../reducer/BuyReducer";
+import SearchReducer from "../reducer/SearchReducer";
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== "production") {
@@ -19,6 +20,7 @@ const combinedReducer = combineReducers({
   Auth: LoginReducer,
   Product: ProductReducer,
   Cart: BuyReducer,
+  Search: SearchReducer,
 });
 
 const MakeStore = ({ isServer }) => {

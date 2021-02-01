@@ -1,3 +1,10 @@
+/**
+ * @author Aldi Mustafri
+ * @email aldimustafri@live.com
+ * @create date 2021-02-01 18:09:25
+ * @modify date 2021-02-01 18:09:26
+ * @desc [description]
+ */
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";

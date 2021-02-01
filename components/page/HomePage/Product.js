@@ -1,3 +1,10 @@
+/**
+ * @author Aldi Mustafri
+ * @email aldimustafri@live.com
+ * @create date 2021-02-01 18:09:58
+ * @modify date 2021-02-01 18:09:59
+ * @desc [description]
+ */
 import React from "react";
 import { useDispatch } from "react-redux";
 import Link from "next/link";

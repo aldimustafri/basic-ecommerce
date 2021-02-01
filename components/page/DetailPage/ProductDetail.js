@@ -1,3 +1,10 @@
+/**
+ * @author Aldi Mustafri
+ * @email aldimustafri@live.com
+ * @create date 2021-02-01 18:09:46
+ * @modify date 2021-02-01 18:09:47
+ * @desc [description]
+ */
 import React, { useState } from "react";
 import { faHeart, faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

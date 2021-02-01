@@ -1,3 +1,10 @@
+/**
+ * @author Aldi Mustafri
+ * @email aldimustafri@live.com
+ * @create date 2021-02-01 18:09:50
+ * @modify date 2021-02-01 18:09:50
+ * @desc [description]
+ */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import Slider from "react-slick";

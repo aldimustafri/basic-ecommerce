@@ -8,11 +8,11 @@ export const Title = styled.h2`
   border-bottom: 1px solid ${Colors.whiteSoft};
 `;
 
-export const SectionCart = styled.section`
+export const SectionSearch = styled.section`
   padding: 10px 1em;
 `;
 
-export const CartList = styled.ul`
+export const SearchList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@ export const CartList = styled.ul`
   grid-row-gap: 10px;
 `;
 
-export const CartItem = styled.li`
+export const SearchItem = styled.li`
   background: ${Colors.greenSoft};
   border-radius: 6px;
   border: 0;
@@ -31,7 +31,7 @@ export const CartItem = styled.li`
   grid-template-columns: 88px auto;
 `;
 
-export const CartText = styled.div`
+export const SearchText = styled.div`
   display: grid;
 `;
 
@@ -45,30 +45,30 @@ export const SectionImage = styled.div`
   align-content: center;
 `;
 
-export const CartImg = styled.img`
+export const SearchImg = styled.img`
   width: 100%;
   height: auto;
 `;
 
-export const CartDetail = styled.div`
+export const SearchDetail = styled.div`
   padding: 10px 1em;
 `;
 
-export const CartTitle = styled.div`
+export const SearchTitle = styled.div`
   font-size: 1em;
   font-weight: 500;
   color: ${Colors.whiteSoft};
 
 `;
 
-export const CartPrice = styled.div`
+export const SearchPrice = styled.div`
   font-size: 1.5em;
   font-weight: 700;
   padding-top: 10px;
   color: ${Colors.whiteSoft};
 `;
 
-export const CartBtn = styled.button`
+export const SearchBtn = styled.button`
   float: right;
   padding: .5em .75em;
   display: inline-grid;

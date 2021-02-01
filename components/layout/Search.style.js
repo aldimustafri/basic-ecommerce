@@ -14,13 +14,14 @@ export const SectionSearch = styled.div`
 `;
 
 export const SearchWrapper = styled.div`
-  width: 100%;
+  padding-left: 24px;
+  width: 91%;
   position: relative;
   display: flex;
 `;
 
 export const SearchInput = styled.input`
-  width: 100%;
+  width: 80%;
   border: 3px solid ${Colors.greenSoft};
   border-right: none;
   padding: 5px;
