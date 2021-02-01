@@ -2,49 +2,81 @@
  * @author Aldi Mustafri
  * @email aldimustafri@live.com
  * @create date 2021-02-01 18:09:43
- * @modify date 2021-02-01 21:45:23
+ * @modify date 2021-02-01 22:10:45
  * @desc [description]
  */
 import Link from "next/link";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector, useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import {
-  SectionSearch, SearchItem, SearchText, SectionImage, SearchImg, SearchDetail, SearchTitle, SearchPrice, SearchBtn, Title, SearchList,
+  SearchButton, SearchInput, SearchWrapper, SectionSearch,
+} from "../../layout/Search.style";
+import {
+  SectionSearchContent, SearchItem, SearchText, SectionImage, SearchImg, SearchDetail, SearchTitle, SearchPrice, SearchBtn, Title, SearchList,
 } from "./SearchContent.style";
+import Colors from "../../style/Colors";
+import { SearchAction } from "../../../redux/action/SearchAction";
 
 function SearchContent() {
+  const dispatch = useDispatch();
+  const { register, handleSubmit } = useForm();
+  const { productData } = useSelector((state) => state.Product);
   const { searchData } = useSelector((state) => state.Search);
-  // console.log(searchData);
+  const [dataResult, setDataResult] = useState(null);
+
+  const onSubmit = async (data) => {
+    const results = productData.filter((item) => item.title.toLowerCase().includes(data.searchData));
+    setDataResult(results);
+    dispatch(SearchAction(results));
+  };
 
   return (
-    <SectionSearch>
-      <Title>Search Result</Title>
-      <SearchList>
-        {searchData[0].length ? (
-          searchData[0].map((item) => (
-            <SearchItem key={uuidv4()}>
-              <SectionImage>
-                <SearchImg src={item.imageUrl} />
-              </SectionImage>
+    <>
+      <SectionSearch>
+        <SearchWrapper>
+          <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+            <SearchInput placeholder="Search here.." name="searchData" ref={register} />
 
-              <SearchDetail>
-                <SearchTitle>{item.title}</SearchTitle>
-                <SearchPrice>{item.price}</SearchPrice>
+            <SearchButton type="submit">
+              <FontAwesomeIcon icon={faSearch} style={{ color: `${Colors.whiteSoft}`, fontSize: "16px" }} />
+            </SearchButton>
+          </form>
 
-                <Link href="/product/[id]" as={`/product/${item.id}`}>
-                  <SearchBtn>Detail</SearchBtn>
-                </Link>
+        </SearchWrapper>
+      </SectionSearch>
 
-              </SearchDetail>
-            </SearchItem>
-          ))
-        ) : (
-          <SearchText> No item</SearchText>
-        )}
+      <SectionSearchContent>
+        <Title>Search Result</Title>
+        <SearchList>
+          {dataResult || searchData[0] ? (
+            searchData[0].map((item) => (
+              <SearchItem key={uuidv4()}>
+                <SectionImage>
+                  <SearchImg src={item.imageUrl} />
+                </SectionImage>
 
-      </SearchList>
-    </SectionSearch>
+                <SearchDetail>
+                  <SearchTitle>{item.title}</SearchTitle>
+                  <SearchPrice>{item.price}</SearchPrice>
+
+                  <Link href="/product/[id]" as={`/product/${item.id}`}>
+                    <SearchBtn>Detail</SearchBtn>
+                  </Link>
+
+                </SearchDetail>
+              </SearchItem>
+            ))
+          ) : (
+            <SearchText> No item</SearchText>
+          )}
+
+        </SearchList>
+      </SectionSearchContent>
+    </>
   );
 }
 

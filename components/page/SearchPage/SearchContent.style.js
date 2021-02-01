@@ -8,7 +8,7 @@ export const Title = styled.h2`
   border-bottom: 1px solid ${Colors.whiteSoft};
 `;
 
-export const SectionSearch = styled.section`
+export const SectionSearchContent = styled.section`
   padding: 10px 1em;
 `;
 

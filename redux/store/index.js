@@ -33,7 +33,7 @@ const MakeStore = ({ isServer }) => {
 
   const persistConfig = {
     key: "Data",
-    whitelist: ["Auth", "Product", "Cart"],
+    whitelist: ["Auth", "Product", "Cart", "Search"],
     storage,
   };
 

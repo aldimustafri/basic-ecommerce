@@ -2,7 +2,7 @@
  * @author Aldi Mustafri
  * @email aldimustafri@live.com
  * @create date 2021-02-01 18:09:01
- * @modify date 2021-02-01 19:14:00
+ * @modify date 2021-02-01 22:01:36
  * @desc [description]
  */
 import React, { useEffect } from "react";
@@ -12,7 +12,7 @@ import { loadState } from "../utils/localstorage";
 import { server } from "../utils/server";
 
 const Head = dynamic(() => import("next/head"));
-const Search = dynamic(() => import("../components/layout/Search"));
+// const Search = dynamic(() => import("../components/layout/Search"));
 const Content = dynamic(() => import("../components/page/SearchPage/SearchContent"));
 const Footer = dynamic(() => import("../components/layout/Footer"));
 
@@ -39,7 +39,7 @@ function cart() {
         <meta property="og:description" content="Basic Cart" />
       </Head>
 
-      <Search />
+      {/* <Search /> */}
       <Content />
       <br />
       <br />
