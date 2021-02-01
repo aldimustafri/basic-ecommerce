@@ -2,7 +2,7 @@
  * @author Aldi Mustafri
  * @email aldimustafri@live.com
  * @create date 2021-02-01 18:08:28
- * @modify date 2021-02-01 19:11:21
+ * @modify date 2021-02-01 21:38:05
  * @desc [description]
  */
 import React from "react";
@@ -10,8 +10,10 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import _ from "lodash/fp";
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 import {
-  Button, H1, InputFields, LoginForm,
+  Button, ButtonLogin, H1, InputFields, LoginForm,
 } from "./LoginContent.style";
 import { LoginAction } from "../../../redux/action/LoginAction";
 
@@ -30,6 +32,20 @@ function LoginContent() {
     }));
 
     router.push("/homepage");
+  };
+
+  const responseGoogle = (response) => {
+    dispatch(LoginAction({
+      email: response.profileObj.email,
+      password: response.profileObj.email,
+    }));
+  };
+
+  const handleClickFacebook = (response) => {
+    dispatch(LoginAction({
+      email: response.profileObj.email,
+      password: response.profileObj.email,
+    }));
   };
 
   return (
@@ -52,6 +68,23 @@ function LoginContent() {
 
           <Button type="submit">Sign In</Button>
         </form>
+        <br />
+        <br />
+        <ButtonLogin>
+          <GoogleLogin
+            clientId="931340461634-i2jnqpig6h233rgmm7ftnh825uddjd18.apps.googleusercontent.com"
+            buttonText="Login With Google"
+            onClick={responseGoogle}
+            cookiePolicy="single_host_origin"
+          />
+
+          <FacebookLogin
+            appId="1088597931155576"
+            autoLoad
+            fields="name,email,picture"
+            onClick={handleClickFacebook}
+          />
+        </ButtonLogin>
       </LoginForm>
     </>
   );

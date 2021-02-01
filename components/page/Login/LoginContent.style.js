@@ -40,3 +40,8 @@ export const Button = styled.button`
   border:0px; outline:none;
   cursor: pointer;
 `;
+
+export const ButtonLogin = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;

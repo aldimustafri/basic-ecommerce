@@ -2,7 +2,7 @@
  * @author Aldi Mustafri
  * @email aldimustafri@live.com
  * @create date 2021-02-01 18:09:50
- * @modify date 2021-02-01 20:37:12
+ * @modify date 2021-02-01 21:31:55
  * @desc [description]
  */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -49,7 +49,7 @@ function category({ data }) {
     <SectionCategory>
       <Slider {...settings}>
         {data.map((item) => (
-          <CategoryContent>
+          <CategoryContent key={item.id}>
             <ImageCard src={item.imageUrl} key={item.id} />
             <CategoryDesc>{item.name}</CategoryDesc>
           </CategoryContent>
