@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Basic e-Commerce Web Mobile
 
-## Getting Started
+This is basic web ecommerce which focused on mobile view. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+# Features!
 
-```bash
-npm run dev
-# or
-yarn dev
+  - Serverside Rendering App.
+  - React with functional component.
+  - Redux for management state.
+  - Persisted State Redux.
+  - Api endpoint.
+  - SEO Support.
+  - Based on Web Vitals measurement.
+  - Minimizer built bundle with webpack.
+  - Responsive, fast, realible app.
+
+### Tech
+Description and technologies used on this app.
+
+* Next.js - The React Framework.
+* Fortawesome - Build and manage icons and typefaces in a single place.
+* React Hook Form - React hook for form validation without the hassle.
+* Axios - Promise Based HTTP Client.
+* NProgress - Slim Progressbar.
+* Redux - A Predictable state container.
+* and more
+
+### Installation
+
+This App requires [Node.js](https://nodejs.org/) v10+ to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ cd basic-ecommerce
+$ npm run dev:clean
 ```
+run on [localhost: 3005](http://localhost:3005)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For production environments...
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+$ npm run build
+$ npm run start
+```
+run on [localhost: 3006](http://localhost:3006)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+**Created by [Aldi Mustafri](https://aldimustafri.com)**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

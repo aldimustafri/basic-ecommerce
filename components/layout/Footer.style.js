@@ -52,3 +52,9 @@ export const FooterNotification = styled.i`
   font-weight: 700;
   font-size: .875em;
 `;
+
+export const FooterButton = styled.button`
+  cursor: pointer;
+  background: none;
+  border: none;
+`;

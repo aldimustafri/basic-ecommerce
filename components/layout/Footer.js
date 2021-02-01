@@ -3,13 +3,21 @@ import { faHome, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import {
+  FooterButton,
   FooterItem, FooterMenu, FooterNotification, FooterText, SectionFooter,
 } from "./Footer.style";
 import Colors from "../style/Colors";
 
 function Footer() {
+  const router = useRouter();
   const { buyData } = useSelector((state) => state.Cart);
+
+  const handleClickLogout = () => {
+    localStorage.clear();
+    router.push("/");
+  };
 
   return (
     <SectionFooter>
@@ -28,19 +36,17 @@ function Footer() {
             <div>
               <FontAwesomeIcon icon={faShoppingCart} style={{ color: `${Colors.whiteSoft}`, fontSize: "26px" }} />
               <FooterText>Cart</FooterText>
-              {buyData && <FooterNotification>{buyData.length}</FooterNotification>}
+              {buyData.length > 0 && <FooterNotification>{buyData.length}</FooterNotification>}
             </div>
           </Link>
         </FooterItem>
 
-        <FooterItem>
-          <Link href="/homepage">
-            <div>
-              <FontAwesomeIcon icon={faUser} style={{ color: `${Colors.whiteSoft}`, fontSize: "26px" }} />
-              <FooterText>Logout</FooterText>
-            </div>
-          </Link>
-        </FooterItem>
+        <FooterButton onClick={handleClickLogout}>
+          <FooterItem>
+            <FontAwesomeIcon icon={faUser} style={{ color: `${Colors.whiteSoft}`, fontSize: "26px" }} />
+            <FooterText>Logout</FooterText>
+          </FooterItem>
+        </FooterButton>
 
       </FooterMenu>
     </SectionFooter>
