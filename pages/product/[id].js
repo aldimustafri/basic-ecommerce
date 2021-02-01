@@ -8,10 +8,11 @@ import { server } from "../../utils/server";
 const Head = dynamic(() => import("next/head"));
 const Search = dynamic(() => import("../../components/layout/Search"));
 const Content = dynamic(() => import("../../components/page/DetailPage/ProductDetail"));
+const Footer = dynamic(() => import("../../components/layout/Footer"));
 
 function homepage({ initialData }) {
   const router = useRouter();
-  const getDataAuth = loadState("persist:AuthData");
+  const getDataAuth = loadState("persist:Data");
   const data = Object.keys(initialData).length;
 
   useEffect(() => {
@@ -39,6 +40,11 @@ function homepage({ initialData }) {
 
       <Search />
       <Content data={initialData.data} />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </>
   );
 }

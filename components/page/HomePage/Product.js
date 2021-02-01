@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import Link from "next/link";
 import {
   DetailBtn,
+  DetailText,
   ImageProduct, ImageSection, ProductContent, ProductList, ProductTitle, ProductWrapper, SectionProduct,
 } from "./Product.style";
 import { ProductListAction } from "../../../redux/action/ProductAction";
@@ -25,7 +26,9 @@ function Product({ data }) {
               <ProductTitle>
                 {item.title}
                 <Link href="/product/[id]" as={`/product/${item.id}`}>
-                  <DetailBtn>Detail</DetailBtn>
+                  <DetailBtn>
+                    <DetailText>Detail</DetailText>
+                  </DetailBtn>
                 </Link>
               </ProductTitle>
 

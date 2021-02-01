@@ -81,3 +81,7 @@ export const DetailBtn = styled.button`
   position: relative;
   padding: .75em;
 `;
+
+export const DetailText = styled.div`
+  color: ${Colors.whiteSoft};
+`;

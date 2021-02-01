@@ -50,7 +50,8 @@
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^1.1.2",

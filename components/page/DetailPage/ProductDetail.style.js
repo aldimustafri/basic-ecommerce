@@ -15,19 +15,18 @@ export const SectionDetail = styled.section`
 export const ImageContent = styled.div`
   position: relative;
   display: block;
-    overflow: hidden;
-    width: 100%;
-    // height: 200px;
-    position: relative;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
     & > i {
-      position: absolute;
-      right: 1em;
-      top: 1em;
-      border-radius: 50%;
-      border: 1px solid ${Colors.whiteSoft};
-      background: ${Colors.whiteSoft};
-      padding: 3px 5px 3px 2px;
-    }
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    border-radius: 50%;
+    border: 1px solid ${Colors.whiteSoft};
+    background: ${Colors.whiteSoft};
+    padding: 3px 5px 3px 2px;
+  }
 `;
 
 export const ProductImg = styled.img`
@@ -36,18 +35,18 @@ export const ProductImg = styled.img`
 `;
 
 export const SectionShare = styled.button`
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    border none
-    background: ${Colors.greenSoft}
-    display: grid;
-    grid-gap: 10px;
-    padding: 10px 1em;
-    & > a {
-      margin: 0;
-    }
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border none
+  background: ${Colors.greenSoft}
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px 1em;
+  & > a {
+    margin: 0;
+  }
 `;
 
 export const ModalHeading = styled.div`
@@ -82,4 +81,34 @@ export const HeartBtn = styled.button`
 
 export const DetailDescription = styled.div`
   padding-top: 10px;
+  line-height: 1.6;
+`;
+
+export const SectionBuy = styled.section`
+  grid-auto-flow: column;
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px 1em;
+`;
+
+export const TextPrice = styled.div`
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 10px;
+  color: ${Colors.blackSoft};
+  text-align: right;
+  padding-right: 10px;
+`;
+
+export const BuyBtn = styled.button`
+  font-size: 24px;
+  font-weight: 700;
+  color: ${Colors.blackSoft};
+  text-align: center;
+  padding-right: 10px;
+
+  background-color: ${Colors.greenSoft};
+  color: ${Colors.whiteSoft};
+  border: 1px solid ${Colors.greenSoft};
+  font-weight: 600;
 `;

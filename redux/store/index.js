@@ -5,6 +5,7 @@ import { createWrapper } from "next-redux-wrapper";
 import thunkMiddleware from "redux-thunk";
 import LoginReducer from "../reducer/LoginReducer";
 import ProductReducer from "../reducer/ProductReducer";
+import BuyReducer from "../reducer/BuyReducer";
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== "production") {
@@ -17,6 +18,7 @@ const bindMiddleware = (middleware) => {
 const combinedReducer = combineReducers({
   Auth: LoginReducer,
   Product: ProductReducer,
+  Cart: BuyReducer,
 });
 
 const MakeStore = ({ isServer }) => {
@@ -28,8 +30,8 @@ const MakeStore = ({ isServer }) => {
   const storage = require("redux-persist/lib/storage").default;
 
   const persistConfig = {
-    key: "AuthData",
-    whitelist: ["Auth"],
+    key: "Data",
+    whitelist: ["Auth", "Product", "Cart"],
     storage,
   };
 

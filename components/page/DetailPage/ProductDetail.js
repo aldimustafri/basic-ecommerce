@@ -3,10 +3,11 @@ import { faHeart, faShareAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch } from "react-redux";
 import {
-  ImageContent, ProductImg, SectionDetail, SectionShare, Title, TitleContent, DetailDescription, HeartBtn,
+  ImageContent, ProductImg, SectionDetail, SectionShare, Title, TitleContent, DetailDescription, HeartBtn, SectionBuy, TextPrice, BuyBtn,
 } from "./ProductDetail.style";
 import Colors from "../../style/Colors";
 import { ProductLikeAction } from "../../../redux/action/ProductAction";
+import { BuyAction } from "../../../redux/action/BuyAction";
 
 function ProductDetail({ data }) {
   const dispatch = useDispatch();
@@ -21,12 +22,20 @@ function ProductDetail({ data }) {
       }));
       setIsLike(false);
     } else {
+      dispatch(ProductLikeAction({
+        id: data.id,
+        loved: 1,
+      }));
       setIsLike(true);
     }
   };
 
   const handleOpenModal = () => {
     setShowModal(true);
+  };
+
+  const handleClickBuy = () => {
+    dispatch(BuyAction(data));
   };
 
   return (
@@ -51,6 +60,10 @@ function ProductDetail({ data }) {
           {data.description}
         </DetailDescription>
 
+        <SectionBuy>
+          <TextPrice>{data.price}</TextPrice>
+          <BuyBtn onClick={handleClickBuy}>Buy</BuyBtn>
+        </SectionBuy>
       </SectionDetail>
 
       {/* <ReactModal isOpen={showModal} style={customStyles}>

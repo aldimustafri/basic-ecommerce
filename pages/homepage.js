@@ -8,12 +8,13 @@ const Head = dynamic(() => import("next/head"));
 const Search = dynamic(() => import("../components/layout/Search"));
 const Category = dynamic(() => import("../components/page/HomePage/Category"));
 const Product = dynamic(() => import("../components/page/HomePage/Product"));
+const Footer = dynamic(() => import("../components/layout/Footer"));
 
 function homepage({ initialData }) {
   const productCategory = initialData.data[0].data.category;
   const productList = initialData.data[0].data.productPromo;
   const router = useRouter();
-  const getDataAuth = loadState("persist:AuthData");
+  const getDataAuth = loadState("persist:Data");
 
   useEffect(() => {
     if (!getDataAuth) {
@@ -37,6 +38,11 @@ function homepage({ initialData }) {
       <Search />
       <Category data={productCategory} />
       <Product data={productList} />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </>
   );
 }

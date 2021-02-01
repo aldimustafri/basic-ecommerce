@@ -11,7 +11,13 @@ export const ProductListAction = (data) => ({
 });
 
 export const ProductLikeAction = ({ id, loved }) => ({
-  TYPE: "PRODUCT_LIKE_ACTION",
+  type: "PRODUCT_LIKE_ACTION",
+  id,
+  loved,
+});
+
+export const ProductUnlinkeAction = ({ id, loved }) => ({
+  type: "PRODUCT_UNLIKE_ACTION",
   id,
   loved,
 });
